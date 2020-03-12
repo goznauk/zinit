@@ -29,12 +29,12 @@ fi
 if command -v curl >/dev/null 2>&1; then
     mkdir -p /tmp/zinit
     cd /tmp/zinit 
-    curl -fsSLO https://raw.githubusercontent.com/zdharma/zinit/master/git-process-output.zsh && \
+    curl -fsSLO https://raw.githubusercontent.com/psprint/zinit/master/git-process-output.zsh && \
         chmod a+x /tmp/zinit/git-process-output.zsh
 elif command -v wget >/dev/null 2>&1; then
     mkdir -p /tmp/zinit
     cd /tmp/zinit 
-    wget -q https://raw.githubusercontent.com/zdharma/zinit/master/git-process-output.zsh && \
+    wget -q https://raw.githubusercontent.com/psprint/zinit/master/git-process-output.zsh && \
         chmod a+x /tmp/zinit/git-process-output.zsh
 fi
 
@@ -46,7 +46,7 @@ if test -d "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME/.git"; then
 else
     cd "$ZINIT_HOME"
     echo "[1;34m▓▒░[0m Installing [1;33mDHARMA Initiative Plugin Manager[0m at [1;35m$ZINIT_HOME/$ZINIT_BIN_DIR_NAME[0m"
-    { git clone --depth 1 --progress https://github.com/zdharma/zinit.git "$ZINIT_BIN_DIR_NAME" \
+    { git clone --depth 1 --progress https://github.com/psprint/zinit.git "$ZINIT_BIN_DIR_NAME" \
         2>&1 | { /tmp/zinit/git-process-output.zsh || cat; } } 2>/dev/null
     if [ -d "$ZINIT_BIN_DIR_NAME" ]; then
         echo
@@ -76,9 +76,9 @@ if [ $RCUPDATE -eq 1 ]; then
 
 ### Added by Zinit's installer
 if [[ ! -f $ZINIT_HOME/$ZINIT_BIN_DIR_NAME/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
+    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (psprint/zinit)…%f"
     command mkdir -p "$ZINIT_HOME" && command chmod g-rwX "$ZINIT_HOME"
-    command git clone https://github.com/zdharma/zinit "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME" && \\
+    command git clone https://github.com/psprint/zinit "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME" && \\
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \\
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
@@ -141,7 +141,7 @@ command cat <<-EOF
 
 For more information see:
 - [38;5;226mREADME[0m section on the ice-modifiers:
-    - https://github.com/zdharma/zinit#ice-modifiers,
+    - https://github.com/psprint/zinit#ice-modifiers,
 - [38;5;226mintro[0m to Zinit at the Wiki:
     - https://zdharma.org/zinit/wiki/INTRODUCTION/,
 - [38;5;226mzinit-zsh[0m GitHub account, which holds all the available Zinit annexes:
